@@ -19,10 +19,11 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Set up node using nvm
+        uses: dcodeIO/setup-node-nvm@v5
         with:
-          node-version: '18.20.4'
+          node-version: '16.20.2' # 指定要使用的 Node.js 版本
+          node-mirror: 'https://nodejs.org/dist/' # 指定 Node.js 鏡像（可選）
       - name: Install dependencies
         run: npm install
       - name: Build And Deploy
